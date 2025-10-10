@@ -1,10 +1,12 @@
-import { createRootRoute, Outlet } from '@tanstack/react-router'
+import { createRootRoute, Outlet, useLocation } from '@tanstack/react-router'
 import { QueryClient } from '@tanstack/react-query'
 import { createAsyncStoragePersister } from '@tanstack/query-async-storage-persister'
 import { PersistQueryClientProvider } from '@tanstack/react-query-persist-client'
 import { TanStackRouterDevtools } from '@tanstack/react-router-devtools'
 import { ReactQueryDevtools } from '@tanstack/react-query-devtools'
 import { Header, Footer } from '~/components/layout'
+import { themeChange } from 'theme-change'
+import { useEffect } from 'react'
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -19,6 +21,11 @@ const persister = createAsyncStoragePersister({
 })
 
 const RootLayout = () => {
+  const location = useLocation()
+  useEffect(() => {
+    themeChange(false)
+  }, [])
+
   return (
     <PersistQueryClientProvider
       client={queryClient}

@@ -7,9 +7,8 @@ import { slant } from 'react-ascii-text'
 import { useEffect } from 'react'
 import { createLazyFileRoute, useNavigate } from '@tanstack/react-router'
 import { useGSAP } from '@gsap/react'
-// import { usePosts } from './__root'
-import { testGetPosts } from '~/data/strapi'
-// import dayjs from 'dayjs'
+import { usePosts } from '~/data/strapi'
+import dayjs from 'dayjs'
 import LogoMinimal from '~/components/svgs/logo-minimal'
 
 export const Route = createLazyFileRoute('/')({
@@ -33,7 +32,6 @@ function Index() {
 
   useEffect(() => {
     gsap.set('#logo', { rotation: 360 })
-    // console.log('import.meta.env', import.meta.env)
   }, [])
 
   const compassSpin = () => {
@@ -48,36 +46,32 @@ function Index() {
 
   const navigate = useNavigate({ from: '/' })
 
-  // const { status, data, error } = usePosts()
-
-  // useEffect(() => {
-  //   if (!data) {
-  //     return
-  //   }
-
-  //   const handleKeyDown = (e: KeyboardEvent) => {
-  //     const key = e.key
-  //     const keysThatLeadToPosts = ['j', 'k', 'l', 'm', 'n'].slice(0, data.data.length)
-
-  //     if (!keysThatLeadToPosts.includes(key)) {
-  //       return
-  //     }
-
-  //     const indexOfKey = keysThatLeadToPosts.indexOf(key)
-  //     // eslint-disable-next-line
-  //     navigate({ to: `/blog/${data.data[indexOfKey].slug}` })
-  //     // window.location.href = `https://blog.kimfreechack.me/${data.data[indexOfKey].slug}`
-  //   }
-  //   document.addEventListener('keydown', handleKeyDown, true)
-
-  //   return () => {
-  //     document.removeEventListener('keydown', handleKeyDown)
-  //   }
-  // }, [data])
+  const { status, data, error } = usePosts()
 
   useEffect(() => {
-    testGetPosts()
-  }, [])
+    if (!data) {
+      return
+    }
+
+    const handleKeyDown = (e: KeyboardEvent) => {
+      const key = e.key
+      const keysThatLeadToPosts = ['j', 'k', 'l', 'm', 'n'].slice(0, data.data.length)
+
+      if (!keysThatLeadToPosts.includes(key)) {
+        return
+      }
+
+      const indexOfKey = keysThatLeadToPosts.indexOf(key)
+      // eslint-disable-next-line
+      navigate({ to: `/blog/${data.data[indexOfKey].slug}` })
+      // window.location.href = `https://blog.kimfreechack.me/${data.data[indexOfKey].slug}`
+    }
+    document.addEventListener('keydown', handleKeyDown, true)
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [data])
 
   return (
     <main className="flex flex-col items-center justify-center">
@@ -106,7 +100,7 @@ function Index() {
           <figcaption className="hidden">My name, Kim Freechack, in ASCII art</figcaption>
         </figure>
       </div>
-      {/* {status === 'pending' ? (
+      {status === 'pending' ? (
         // TODO: Make an honest to god loading component that fits with the rest of the site's design and use that instead
         <div role="status">
           <svg aria-hidden="true" className="inline w-8 h-8 text-gray-200 animate-spin dark:text-base-300 fill-accent" viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -117,10 +111,10 @@ function Index() {
         </div>
       ) : status === 'error' ? (
         <span>Error: {error.message}</span>
-      ) : ( */}
+      ) : (
         <table className="table-auto font-cascadia text-xs md:text-sm">
           <tbody>
-            {/* {data.data.map((post, idx) => {
+            {data.data.map((post, idx) => {
               return (
                 <tr key={post.uuid}>
                   <td className="p-2">
@@ -136,7 +130,7 @@ function Index() {
                   </td>
                 </tr>
               )
-            })} */}
+            })}
             <tr>
               <td className="p-2">h</td>
               <td>Help</td>
@@ -145,7 +139,7 @@ function Index() {
             </tr>
           </tbody>
         </table>
-      {/* )} */}
+      )}
     </main>
   )
 }

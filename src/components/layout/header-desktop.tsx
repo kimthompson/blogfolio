@@ -57,10 +57,10 @@ export default function Header() {
                 </Link>
               </li>
               <li className="nav-item-mobile">
-                <a href="https://blog.kimfreechack.me/" className="flex flex-row justify-start items-center gap-2 w-full">
+                <Link to="/blog" className="flex flex-row justify-start items-center gap-2 w-full">
                   <PenTool className="w-3 h-3 stroke-primary" />
                   <span className="animated-gradient hover-gradient">Blog</span>
-                </a>
+                </Link>
               </li>
               <li className="nav-item-mobile">
                 <Link to="/projects" className="flex flex-row justify-start items-center gap-2 w-full">

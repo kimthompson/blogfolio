@@ -1,10 +1,29 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import { strapi } from '@strapi/client'
+
+const client = strapi({ 
+  baseURL: import.meta.env.VITE_STRAPI_URL,
+  auth: import.meta.env.VITE_STRAPI_API_TOKEN,
+})
+
+async function getPosts() {
+  const posts = client.collection('posts') 
+  return await posts.find({
+    locale: 'en',
+    sort: 'published:desc',
+    populate: 'cover',
+  })
+}
 
 function App() {
   const [count, setCount] = useState(0)
+
+  useEffect(() => {
+    getPosts().then((res) => console.log(res)).catch((err) => console.error(err))
+  })
 
   return (
     <>

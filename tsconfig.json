@@ -1,7 +1,47 @@
 {
-  "files": [],
-  "references": [
-    { "path": "./tsconfig.app.json" },
-    { "path": "./tsconfig.node.json" }
-  ]
+  "include": [
+    "**/*.ts",
+    "**/*.tsx",
+    "vitest-setup.js",
+    "eslint.config.mjs",
+    "src/components/layout/__tests__/header-mobile.test.jsx",
+    "src/components/layout/__tests__/footer-desktop.test.jsx",
+    "src/components/layout/__tests__/footer-mobile.test.jsx"
+  ],
+  "compilerOptions": {
+    "lib": [
+      "DOM",
+      "DOM.Iterable",
+      "ES2022"
+    ],
+    "types": [
+      "vite/client",
+      "vitest/globals",
+      "@testing-library/jest-dom"
+    ],
+    "rootDirs": [
+      "."
+    ],
+    "isolatedModules": true,
+    "esModuleInterop": true,
+    "jsx": "react-jsx",
+    "moduleResolution": "Bundler",
+    "resolveJsonModule": true,
+    "target": "ES2022",
+    "module": "ESNext",
+    "strict": true,
+    "allowJs": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "useUnknownInCatchVariables": true,
+    "baseUrl": ".",
+    "paths": {
+      "~/*": [
+        "./src/*"
+      ]
+    },
+    // "outDir": "tscOut",
+    // Remix takes care of building everything in `remix build`.
+    "noEmit": true
+  }
 }

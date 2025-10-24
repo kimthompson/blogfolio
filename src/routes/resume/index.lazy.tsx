@@ -4,7 +4,7 @@ import { colorDict, skillsAndTools } from '~/data/projects'
 import cn from 'classnames'
 import MonoCursiveName from '~/components/svgs/mono-cursive-name'
 import { summary, experience } from '~/data/resume'
-import _ from 'lodash'
+// import _ from 'lodash'
 
 export const Route = createLazyFileRoute('/resume/')({
   component: RouteComponent,
@@ -110,7 +110,7 @@ function RouteComponent() {
         </ul>
       </section>
       <section className="flex flex-col w-full items-center">
-        <a href="/kim-freechack-resume.pdf" download className="btn btn-lg btn-primary mt-8">
+        <a href="/kim-freechack-resume-print.pdf" download className="btn btn-lg btn-primary mt-8">
           Download
         </a>
       </section>

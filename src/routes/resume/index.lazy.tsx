@@ -110,7 +110,7 @@ function RouteComponent() {
         </ul>
       </section>
       <section className="flex flex-col w-full items-center">
-        <a href="/kim-freechack-resume-print.pdf" download className="btn btn-lg btn-primary mt-8">
+        <a href="/kim-freechack-resume.pdf" download className="btn btn-lg btn-primary mt-8">
           Download
         </a>
       </section>

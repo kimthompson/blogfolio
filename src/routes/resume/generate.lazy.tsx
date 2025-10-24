@@ -108,7 +108,7 @@ function RouteComponent() {
         <h2 className="text-xl font-cascadia font-semibold">Education</h2>
         <div className="flex flex-row justify-between">
           <h3 className="text-sm font-bold">University of Minnesota — Twin Cities</h3>
-          <h3 className="text-sm font-regular opacity-70">2015</h3>
+          <h3 className="text-sm font-regular text-stone-700">2015</h3>
         </div>
         <ul>
           <li className="text-sm italic">B.A. Computer Science</li>

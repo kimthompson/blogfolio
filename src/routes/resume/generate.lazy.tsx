@@ -35,7 +35,7 @@ function RouteComponent() {
               <div className="">
                 <div className="flex flex-row justify-between">
                   <h3 className="text-sm font-bold italic">{ex.employer}, {ex.location}</h3>
-                  <h3 className="text-sm font-regular opacity-70">{ex.tenure}</h3>
+                  <h3 className="text-sm font-regular text-stone-700">{ex.tenure}</h3>
                 </div>
                 <h4 className="text-sm italic -mt-1 mb-1">{ex.title}</h4>
               </div>

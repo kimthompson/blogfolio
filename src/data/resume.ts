@@ -20,7 +20,7 @@ interface Client {
   relevantSkills: Tool[]
 }
 
-export const summary: string = 'A software engineer with ten years of experience creating applications for mobile, web, and desktop. Currently focused on cross-platform development with React Native, but with a extensive background of using React for web development and a proven ability to pick up new tools quickly and safely. Values communication and mentorship, empowering teammates and fostering a collaborative and supportive environment.'
+export const summary: string = 'A software engineer with ten years of experience creating applications for mobile, web, and desktop. Currently focused on cross-platform development with React Native, but with an extensive background using React for web development and a proven ability to pick up new tools quickly and safely. Values communication and mentorship, empowering teammates and fostering a collaborative and supportive environment.'
 
 export const experience: Experience[] = [
   {

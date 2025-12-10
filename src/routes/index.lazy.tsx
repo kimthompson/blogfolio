@@ -56,14 +56,14 @@ function Index() {
     const handleKeyDown = (e: KeyboardEvent) => {
       const key = e.key
       const keysThatLeadToPosts = ['j', 'k', 'l', 'm', 'n'].slice(0, data.data.length)
-
+      
       if (!keysThatLeadToPosts.includes(key)) {
         return
       }
 
       const indexOfKey = keysThatLeadToPosts.indexOf(key)
-      // eslint-disable-next-line
-      navigate({ to: `/blog/${data.data[indexOfKey].slug}` })
+
+      navigate({ to: `/blog/${data.data[indexOfKey].documentId}` })
       // window.location.href = `https://blog.kimfreechack.me/${data.data[indexOfKey].slug}`
     }
     document.addEventListener('keydown', handleKeyDown, true)
@@ -71,7 +71,7 @@ function Index() {
     return () => {
       document.removeEventListener('keydown', handleKeyDown)
     }
-  }, [data])
+  }, [data, navigate])
 
   return (
     <main className="flex flex-col items-center justify-center">
@@ -116,7 +116,7 @@ function Index() {
           <tbody>
             {data.data.map((post, idx) => {
               return (
-                <tr key={post.uuid}>
+                <tr key={idx}>
                   <td className="p-2">
                     {String.fromCharCode(idx + 74).toLowerCase()}
                   </td>

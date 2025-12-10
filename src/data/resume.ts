@@ -32,7 +32,7 @@ export const experience: Experience[] = [
     description: "Joined a greenfield team taking over the development and maintenance of ATS's flagship React Native app, FreightMatch. Once that project stabilized, pivoted to a new maintenance team and cross-trained in how to maintain and sometimes rewrite legacy applications.",
     bulletPoints: [
       'Became the SME for all Apple and Xcode issues, in part due to my background developing in Swift and SwiftUI and, before that, Objective-C and UIKit.',
-      'Replaced our clunky, dying Microsoft App Center build pipelines with a more reliable and transparent process using Fastlane and GitLab CI, for which I won an iDrive award for innovation in 2024..',
+      'Replaced our clunky, dying Microsoft App Center build pipelines with a more reliable and transparent process using Fastlane and GitLab CI, for which I won an iDrive award for innovation in 2024.',
       "Aided the marketing team when the Drive4ATS site dropped in Google's rankings due to poor Lighthouse statistics. Managed to wring ~30 points of performance out of their existing HubSpot template.",
     ],
     relevantSkills: ['react native', 'swift', 'kotlin', 'react', 'typescript', 'html', 'css', 'node', 'fastlane', 'gitlab ci', 'tailwind', 'node', 'remix', 'tanstack', 'hubspot', 'php', 'opentelemetry', 'openshift'],

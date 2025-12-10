@@ -109,11 +109,6 @@ function RouteComponent() {
           <li className="italic">B.A. Journalism</li>
         </ul>
       </section>
-      <section className="flex flex-col w-full items-center">
-        <a href="/kim-freechack-resume.pdf" download className="btn btn-lg btn-primary mt-8">
-          Download
-        </a>
-      </section>
     </div>
   )
 }
